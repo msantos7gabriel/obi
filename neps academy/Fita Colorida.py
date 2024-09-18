@@ -5,11 +5,10 @@ zeros = []
 
 def distancia(x):
     dist = []
-    menor = 10000
+    menor = float('inf')
     for a in zeros:
         dist.append(a-x)
-    dist.sort()
-    for i, d in enumerate(dist):
+    for d in dist:
         if d < menor:
             if d <= -1:
                 d *= -1

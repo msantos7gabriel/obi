@@ -1,16 +1,23 @@
+# O Seguinte codigo está funcional porem passa do limite de tempo de execução predefinido pelo neps academy
+
 def soma_linha(x, j):
     # x = Valor Fixo
-    # valor para não somar
-
-    somas = []
+    # k = valor para não somar
     soma = 0
     for i in range(0, len(matriz[x])):
-        if matriz[x][i] != matriz[x][j]:
+        if i != j:
             soma += matriz[x][i]
-    somas.append(soma)
-    somas.sort()
-    print(somas[0])
+    return soma
 
+
+def soma_coluna(x, j):
+    # x = Valor Fixo
+    # k = valor para não somar
+    soma = 0
+    for i in range(0, len(matriz[x])):
+        if i != j:
+            soma += matriz[i][x]
+    return soma
 
 
 matriz = []
@@ -21,9 +28,8 @@ for i in range(0, dim):
     matriz.append(linhas[:])
     linhas.clear()
 
-soma_linha(0)
-
 for i in range(0, len(matriz)):
     for j in range(0, dim):
-        print(matriz[0][j])
-        soma_linha(i, j)
+        somas.append(soma_coluna(j, i)+soma_linha(i, j))
+somas.sort(reverse=True)
+print(somas[0])

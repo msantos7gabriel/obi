@@ -13,8 +13,7 @@ def inversor(nums):
 
 
 n = int(input())
-n1 = 0
-n2 = 0
+n1 = n2 = 0
 list = list(map(int, input().split()))
 for num in list:
     if num == 1:

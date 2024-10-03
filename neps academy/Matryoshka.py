@@ -1,11 +1,15 @@
-n = input()
+num = int(input())
 lista = list(map(int, input().split()))
-print(lista)
+lista_sorted = sorted(lista)
+fora_da_ordem = []
+contador = 0
 
-e = len(lista)
-d = 1
+for i in range(num):
+    if lista[i] != lista_sorted[i]:
+        fora_da_ordem.append(lista[i])
+        contador += 1
 
-while True:
-    if lista[d] > lista[d-1]:
-        while True:
-            if lista[d]<
+print(contador)
+fora_da_ordem.sort()
+for f in fora_da_ordem:
+    print(f, end=' ')
